@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <p>Create an account to track your prestigious events.</p>
 
   <?php if ($error): ?><div class="error"><?php echo htmlspecialchars($error); ?></div><?php endif; ?>
+  <?php if ($success): ?><div class="success"><?php echo $success; ?></div><?php endif; ?>
 
   <form action="signup.php" method="POST" novalidate>
     <div>
