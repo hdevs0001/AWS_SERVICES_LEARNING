@@ -15,7 +15,7 @@
 <section class="hero">
   <div class="hero-content">
     <h1>The Grandeur of <br><span>Indian Traditions</span></h1>
-    <p>We curate magnificent Big Fat Indian Weddings infused with timeless heritage, vibrant colors, and unparalleled warmth. Experience the pinnacle of Desi celebration.</p>
+    <p>We curate magnificent Big Fat Indian Weddings infused with timeless heritage, vibrant colors, and unparalleled warmth. Experience the pinnacle of Desi celebration.<br><br><span style="color: var(--accent); font-weight: 500; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic;">Proudly providing our luxury services across the Tricity (Chandigarh, Mohali & Panchkula)</span></p>
     <a href="booking.php" class="btn-primary">Begin Your Journey</a>
   </div>
 </section>

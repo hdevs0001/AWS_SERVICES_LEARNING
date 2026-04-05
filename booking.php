@@ -78,6 +78,8 @@ $pre_selected_event = isset($_GET['event']) ? htmlspecialchars($_GET['event']) :
           </div>
         </label>
 
+
+
       </div>
     </div>
 
@@ -114,23 +116,23 @@ $pre_selected_event = isset($_GET['event']) ? htmlspecialchars($_GET['event']) :
     </div>
 
     <div class="form-group">
-      <label>Culinary Preference</label>
+      <label>Culinary Package (Select One)</label>
       <div class="chip-group">
         <label class="chip-label">
-          <input type="checkbox" name="meals[]" value="Maharaja Grand Buffet">
-          <div class="chip-btn">Maharaja Grand Buffet</div>
+          <input type="radio" name="meals[]" value="Bronze Buffet" required>
+          <div class="chip-btn">Bronze Buffet</div>
         </label>
         <label class="chip-label">
-          <input type="checkbox" name="meals[]" value="Live Chaat & Global">
-          <div class="chip-btn">Live Chaat & Global</div>
+          <input type="radio" name="meals[]" value="Silver Buffet">
+          <div class="chip-btn">Silver Buffet</div>
         </label>
         <label class="chip-label">
-          <input type="checkbox" name="meals[]" value="Traditional Royal Thali">
-          <div class="chip-btn">Traditional Royal Thali</div>
+          <input type="radio" name="meals[]" value="Golden Buffet">
+          <div class="chip-btn">Golden Buffet</div>
         </label>
         <label class="chip-label">
-          <input type="checkbox" name="meals[]" value="High Tea Setup">
-          <div class="chip-btn">Heritage High Tea</div>
+          <input type="radio" name="meals[]" value="Diamond Buffet">
+          <div class="chip-btn">Diamond Buffet</div>
         </label>
       </div>
     </div>
@@ -210,15 +212,15 @@ $pre_selected_event = isset($_GET['event']) ? htmlspecialchars($_GET['event']) :
           'Live Concerts': 300000
       },
       themes: {
-          'Classic Elegance (Basic)': 0,
+          'Classic Elegance (Basic)': 50000,
           'Regal Splendor (Advanced)': 100000,
           'Maharaja Extravaganza (Premium)': 250000
       },
       meals: {
-          'Maharaja Grand Buffet': 3500,
-          'Live Chaat & Global': 2000,
-          'Traditional Royal Thali': 2800,
-          'High Tea Setup': 1500
+          'Bronze Buffet': 1500,
+          'Silver Buffet': 2000,
+          'Golden Buffet': 3000,
+          'Diamond Buffet': 3700
       },
       addons: {
           'Haldi Ceremony': 75000,

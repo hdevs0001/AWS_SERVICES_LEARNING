@@ -6,9 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royal Diner | Awadhi & Mughlai Cuisine</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=<?= time(); ?>">
 <style>
 /* Local Overrides for Diner Atmosphere */
+.diner a:hover { background: var(--accent) !important; color: #ffffff !important; border-color: var(--accent) !important; }
 body {
     background-color: #1A120E; 
     color: #FDFBF7;
@@ -16,6 +17,10 @@ body {
 header {
     background: rgba(26, 18, 14, 0.9);
     border-bottom: 1px solid rgba(234, 222, 203, 0.1);
+    --text-primary: #FDFBF7;
+    --text-secondary: rgba(253, 251, 247, 0.7);
+    --border-color: rgba(234, 222, 203, 0.3);
+    --bg-color: #1A120E;
 }
 .logo, h1, h2, h3, nav a:hover, nav a.active { color: #FDFBF7; }
 nav a { color: rgba(253, 251, 247, 0.7); }
@@ -79,8 +84,8 @@ nav a { color: rgba(253, 251, 247, 0.7); }
     margin-top: 30px;
 }
 .reservation-box .btn:hover {
-    background: #FDFBF7;
-    color: #1A120E;
+    background: #A66E40; /* darker gold */
+    color: #fff;
 }
 footer {
     background: #110C09;
@@ -96,14 +101,17 @@ footer {
 <section class="hero">
   <div class="hero-content">
     <h1>Flavors of <br><span style="font-style: italic; color: var(--accent);">The Native Maharajas</span></h1>
-    <p>Welcome to the Royal Diner. Immerse yourself in an unparalleled Royal Awadhi and Mughlai dining experience where world-class Indian gastronomy meets atmospheric intimacy.</p>
+    <p style="margin-bottom: 15px;">Welcome to the Royal Restaurant. Immerse yourself in an unparalleled Royal Awadhi and Mughlai dining experience where world-class Indian gastronomy meets atmospheric intimacy.</p>
+    <div style="display: inline-block; padding: 10px 25px; border: 1px solid var(--accent); border-radius: 30px; font-weight: 500; font-size: 0.95rem; color: #FDFBF7; background: rgba(192, 133, 82, 0.1); margin-top: 10px;">
+      📍 #121, Sector 34 A, Chandigarh
+    </div>
   </div>
 </section>
 
 <div class="gallery-grid">
   
   <div class="dish-card">
-    <img src="assets/images/diner.png" alt="Royal Thali">
+    <img src="assets/images/royal_thali.png" alt="Royal Thali">
     <div class="dish-info">
       <h3>The Royal Thali</h3>
       <p>A majestic brass platter serving 24 distinct, rich curries and artisan breads from across the subcontinent.</p>
@@ -111,7 +119,7 @@ footer {
   </div>
 
   <div class="dish-card">
-    <img src="assets/images/diner.png" alt="Mughlai Kebabs">
+    <img src="assets/images/mughlai_kebabs.png" alt="Mughlai Kebabs">
     <div class="dish-info">
       <h3>Mughlai Kebabs</h3>
       <p>Masterfully charred and spiced artisan meats crafted in traditional clay tandoors by our Ustad Chefs.</p>
@@ -119,7 +127,7 @@ footer {
   </div>
 
   <div class="dish-card">
-    <img src="assets/images/diner.png" alt="Awadhi Biryani">
+    <img src="assets/images/awadhi_biryani.png" alt="Awadhi Biryani">
     <div class="dish-info">
       <h3>Awadhi Biryani</h3>
       <p>Dum-cooked fragrant basmati rice layered with rich saffron, caramelized onions, and slow-cooked tender meat.</p>
@@ -127,15 +135,15 @@ footer {
   </div>
 
   <div class="dish-card">
-    <img src="assets/images/diner.png" alt="Atmosphere">
+    <img src="assets/images/paneer_tikka.png" alt="Paneer Tikka">
     <div class="dish-info">
-      <h3>Palace Ambience</h3>
-      <p>Dine beneath extravagant chandeliers and velvet draping designed for the most exclusive evenings.</p>
+      <h3>Classic Paneer Tikka</h3>
+      <p>Succulent chunks of cottage cheese and bell peppers, marinated in robust native spices and slow-roasted in our traditional tandoor.</p>
     </div>
   </div>
 
   <div class="dish-card">
-    <img src="assets/images/diner.png" alt="Desserts">
+    <img src="assets/images/mithai_finales.png" alt="Desserts">
     <div class="dish-info">
       <h3>Mithai Finales</h3>
       <p>Decadent Rabri, golden Jalebis, and rich saffron infused sweets meant to leave a lingering memory.</p>
@@ -143,7 +151,7 @@ footer {
   </div>
 
   <div class="dish-card">
-    <img src="assets/images/diner.png" alt="Spices">
+    <img src="assets/images/artisan_spices.png" alt="Spices">
     <div class="dish-info">
       <h3>Artisan Spices</h3>
       <p>Every dish is constructed from native, hand-ground spices sourced directly from rich Indian soils.</p>
@@ -200,12 +208,17 @@ footer {
         <div class="form-group">
           <label style="color:#FDFBF7;">Time Selection</label>
           <select name="reservation_time" required style="background:#1A120E; color:#FDFBF7; border-color:rgba(234,222,203,0.2);">
-            <option value="">Select an Evening Time</option>
-            <option value="6:00 PM">6:00 PM</option>
-            <option value="7:00 PM">7:00 PM</option>
-            <option value="8:00 PM">8:00 PM</option>
-            <option value="9:00 PM">9:00 PM</option>
-            <option value="10:00 PM">10:00 PM</option>
+            <option value="">Select a Booking Time</option>
+            <option value="12:00 PM">12:00 PM (Lunch Service)</option>
+            <option value="1:00 PM">1:00 PM (Lunch Service)</option>
+            <option value="2:00 PM">2:00 PM (Lunch Service)</option>
+            <option value="3:00 PM">3:00 PM (Late Lunch)</option>
+            <option value="6:00 PM">6:00 PM (Dinner Service)</option>
+            <option value="7:00 PM">7:00 PM (Dinner Service)</option>
+            <option value="8:00 PM">8:00 PM (Dinner Service)</option>
+            <option value="9:00 PM">9:00 PM (Dinner Service)</option>
+            <option value="10:00 PM">10:00 PM (Late Dinner)</option>
+            <option value="11:00 PM">11:00 PM (Midnight Menu)</option>
           </select>
         </div>
       </div>

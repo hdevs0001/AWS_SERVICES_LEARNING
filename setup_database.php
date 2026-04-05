@@ -2,9 +2,9 @@
 // This file is used to generate the database schema on a new machine.
 // Run this once manually if your tables are missing.
 
-$servername = "database-1.cnwke4y8223v.ap-south-1.rds.amazonaws.com";
-$username = "admin";
-$password = "saini7277";
+$servername = "localhost";
+$username = "root";
+$password = "";
 $dbname = "royal_rituals";
 
 $conn = new mysqli($servername, $username, $password);

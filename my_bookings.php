@@ -76,10 +76,11 @@ $stmt_r->close();
                         <p>Theme: <?= htmlspecialchars($b['theme']); ?> | Banquet: <?= htmlspecialchars($b['meals']); ?></p>
                         <p>Guest List: <?= htmlspecialchars($b['guests']); ?> attendees secured.</p>
                     </div>
-                    <div class="order-status">
+                    <div class="order-status" style="text-align: right;">
                         <span class="status-pill">CONFIRMED</span>
                         <span class="date-highlight"><?= date('F j, Y', strtotime($b['event_date'])); ?></span>
-                        <p style="color:var(--text-secondary); margin-top:5px; font-size:0.85rem;"><?= htmlspecialchars($b['event_time']); ?></p>
+                        <p style="color:var(--text-secondary); margin-top:5px; font-size:0.85rem; margin-bottom: 10px;"><?= htmlspecialchars($b['event_time']); ?></p>
+                        <a href="view_receipt.php?type=event&id=<?= $b['id'] ?>" style="font-size:0.85rem; color:var(--accent); text-decoration:none; border:1px solid var(--accent); padding:4px 10px; border-radius:4px; display:inline-block;">Download Receipt</a>
                     </div>
                 </div>
             <?php endwhile; ?>
@@ -99,10 +100,11 @@ $stmt_r->close();
                         <h3>Table for <?= htmlspecialchars($r['party_size']); ?></h3>
                         <p>Reserved under: <?= htmlspecialchars($r['full_name']); ?> (<?= htmlspecialchars($r['phone']); ?>)</p>
                     </div>
-                    <div class="order-status">
+                    <div class="order-status" style="text-align: right;">
                         <span class="status-pill" style="background:#1A120E; color:#FDFBF7;">LOCKED IN</span>
                         <span class="date-highlight"><?= date('F j, Y', strtotime($r['reservation_date'])); ?></span>
-                        <p style="color:var(--text-secondary); margin-top:5px; font-size:0.85rem;"><?= htmlspecialchars($r['reservation_time']); ?></p>
+                        <p style="color:var(--text-secondary); margin-top:5px; font-size:0.85rem; margin-bottom: 10px;"><?= htmlspecialchars($r['reservation_time']); ?></p>
+                        <a href="view_receipt.php?type=reservation&id=<?= $r['id'] ?>" style="font-size:0.85rem; color:var(--accent); text-decoration:none; border:1px solid var(--accent); padding:4px 10px; border-radius:4px; display:inline-block;">Download Receipt</a>
                     </div>
                 </div>
             <?php endwhile; ?>

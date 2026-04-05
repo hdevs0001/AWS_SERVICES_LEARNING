@@ -1,8 +1,8 @@
 <?php
 // Database Connection Configuration
-$servername = "database-1.cnwke4y8223v.ap-south-1.rds.amazonaws.com";
-$username = "admin";
-$password = "saini7277";
+$servername = "localhost";
+$username = "root";
+$password = "";
 $dbname = "royal_rituals";
 
 // Establish Database Connection
