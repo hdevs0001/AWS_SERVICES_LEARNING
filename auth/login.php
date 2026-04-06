@@ -13,25 +13,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = "Invalid email format. Please provide a valid email.";
     } else {
-        $stmt = $conn->prepare("SELECT id, name, password, is_admin FROM users WHERE email = ?");
+        $stmt = $conn->prepare("SELECT id, name, password FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $stmt->store_result();
         
         if ($stmt->num_rows > 0) {
-            $stmt->bind_result($id, $name, $hashed_password, $is_admin);
+            $stmt->bind_result($id, $name, $hashed_password);
             $stmt->fetch();
             
             if (password_verify($password, $hashed_password)) {
-                if ($is_admin == 1) {
-                    $error = "Admin accounts must log in via the Imperial Dashboard.";
-                } else {
-                    // Securely log in the user
-                    $_SESSION['user_id'] = $id;
-                    $_SESSION['user_name'] = $name;
-                    header("Location: ../booking.php");
-                    exit();
-                }
+                // Securely log in the user
+                $_SESSION['user_id'] = $id;
+                $_SESSION['user_name'] = $name;
+                header("Location: ../booking.php");
+                exit();
             } else {
                 $error = "Invalid password.";
             }

@@ -84,7 +84,7 @@ if (!$success) {
   <div class="receipt-container" style="max-width: 600px; margin: 60px auto; background: #fff; padding: 50px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid var(--border-color); position: relative; overflow: hidden;">
     <div style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px dashed var(--border-color);">
         <h2 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2.2rem; margin-bottom: 5px;">Royal Rituals</h2>
-        <p style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; color: var(--text-secondary);">Official Imperial Receipt</p>
+        <p style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; color: var(--text-secondary);">Official Royal Rituals Receipt</p>
     </div>
 
     <div style="display: flex; justify-content: space-between; margin-bottom: 30px; font-size: 0.95rem;">

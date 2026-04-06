@@ -25,7 +25,7 @@ $reservations_result = $conn->query($reservations_query);
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
 body { background: #FAF8F5; color: var(--text-primary); }
-.admin-container { max-width: 1400px; margin: 120px auto 60px; padding: 0 5%; }
+.admin-container { max-width: 1400px; margin: 60px auto 60px; padding: 0 5%; }
 .admin-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 40px; }
 .admin-header h1 { font-size: 2.5rem; color: var(--text-primary); }
 
@@ -45,11 +45,11 @@ td { border-bottom: 1px solid #eee; color: var(--text-secondary); }
 </head>
 <body>
 
-<?php include 'includes/header.php'; ?>
+
 
 <div class="admin-container">
   <div class="admin-header">
-    <h1>Imperial Management Dashboard</h1>
+    <h1>Royal Rituals Dashboard</h1>
     <div style="display:flex; gap: 15px;">
       <a href="index.php" class="btn" style="background: transparent; border: 1px solid var(--text-primary); color: var(--text-primary);">Return to Site</a>
       <a href="auth/admin_logout.php" class="btn" style="background: #e74c3c; border: none;">Secure Logout</a>

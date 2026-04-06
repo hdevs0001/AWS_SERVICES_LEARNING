@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Decorative Header -->
     <div style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px dashed var(--border-color);">
         <h2 style="font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2.2rem; margin-bottom: 5px;">Royal Rituals</h2>
-        <p style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; color: var(--text-secondary);">Official Imperial Receipt</p>
+        <p style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; color: var(--text-secondary);">Official Royal Rituals Receipt</p>
     </div>
 
     <!-- Receipt Info -->

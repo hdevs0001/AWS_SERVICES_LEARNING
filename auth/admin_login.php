@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, name, password, is_admin FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, name, password FROM admins WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -19,20 +19,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
-            if ($user['is_admin'] == 1) {
-                $_SESSION['admin_logged_in'] = true;
-                $_SESSION['admin_id'] = $user['id'];
-                $_SESSION['admin_name'] = $user['name'];
-                header("Location: ../admin.php");
-                exit();
-            } else {
-                $error = "Access Denied: Account lacks Imperial Management privileges.";
-            }
+            $_SESSION['admin_logged_in'] = true;
+            $_SESSION['admin_id'] = $user['id'];
+            $_SESSION['admin_name'] = $user['name'];
+            header("Location: ../admin.php");
+            exit();
         } else {
-            $error = "Invalid Imperial credentials.";
+            $error = "Invalid Royal Rituals credentials.";
         }
     } else {
-        $error = "Invalid Imperial credentials.";
+        $error = "Invalid Royal Rituals credentials.";
     }
     
     $stmt->close();
@@ -44,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imperial Dashboard Login | Royal Rituals</title>
+    <title>Royal Rituals Dashboard Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
@@ -61,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body style="background: #FAF8F5;">
 
 <div class="auth-container">
-    <h2>Secure Imperial Gateway</h2>
+    <h2>Secure Royal Rituals Gateway</h2>
     <?php if (isset($error)): ?>
         <div class="error"><?php echo htmlspecialchars($error); ?></div>
     <?php endif; ?>
