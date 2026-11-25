@@ -35,7 +35,7 @@ $pre_selected_event = isset($_GET['event']) ? htmlspecialchars($_GET['event']) :
 <?php include 'includes/header.php'; ?>
 
 <div class="container">
-  <h2 class="title" style="margin-bottom: 20px;">Secure Your Extravaganza(1)</h2>
+  <h2 class="title" style="margin-bottom: 20px;">Secure Your Extravaganza(2)</h2>
   <p style="text-align: center; color: var(--text-secondary); margin-bottom: 40px; font-size: 1.1rem;">Submit your foundational details so our master architects can begin planning your monumental Indian event.</p>
 
   <?php if(!isset($_SESSION['user_id'])): ?>
